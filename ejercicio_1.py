@@ -39,10 +39,16 @@ if __name__ == "__main__":
         if opcion == 1:
             documentos.push(obtener_documento())
         elif opcion == 2:
-            documentos.top().show()
+            if documentos.length() > 0:
+                documentos.top().show()
+            else:
+                print("No hay documentos para mostrar!")
         elif opcion == 3:
-            documentos.pop().show()
-            print("Documento eliminado de manera exitoso")
+            if documentos.length() > 0:
+                documentos.pop().show()
+                print("Documento eliminado de manera exitosa")
+            else:
+                print("No hay documentos para eliminar")
         elif opcion == 4:
             print(f"Cantidad de Documentos Pendientes: {documentos.length()}")
         elif opcion == 5:
